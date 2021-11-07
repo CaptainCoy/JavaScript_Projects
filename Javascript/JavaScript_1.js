@@ -1,3 +1,4 @@
+//team selector
 function NBA() {
     var NBA_team;
     var team = document.getElementById("team_input").value;
@@ -94,3 +95,21 @@ function NBA() {
     }
     document.getElementById("Output").innerHTML=NBA_team+" are #1";
 }
+
+//get Element by class example
+function Hello_Function() {
+    var A = document.getElementsByClassName("Click");
+    A[0].innerHTML="Told you so...";
+}
+
+//canvas features
+var c=document.getElementById("canvasArt");
+var cA=c.getContext("2d");
+
+//gradient
+var grd=cA.createRadialGradient(75,50,5,90,60,100);
+grd.addColorStop(0,"blue");
+grd.addColorStop(1,"teal");
+//gradient fill
+cA.fillStyle=grd;
+cA.fillRect(0,0,500,256);
