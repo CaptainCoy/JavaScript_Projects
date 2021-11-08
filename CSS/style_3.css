@@ -1,0 +1,90 @@
+body {
+    background-color: rgb(88, 97, 105);
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color:rgb(255, 251, 7);
+    padding: 15%;
+    margin: auto;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block
+}
+
+input[type=text], select, textarea {
+    background-color: black;
+    color:rgb(253, 176, 8);
+    border: 1px solid rgb(133, 93, 48);
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit] {
+    background-color: rgba(0, 206, 209, 0.685);
+    color: darkslategrey;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: rgba(93, 104, 79, 0.555);
+}
+
+.container {
+    border-radius: 5px;
+    background-color: rgba(82, 13, 28, 0.637);
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+.row:after {
+    content:"";
+    display: table;
+    clear: both;
+}
+
+button {
+    padding:15px 25px;
+    text-align: center;
+    background-color: rgb(20, 97, 197);
+    color:rgb(255, 255, 255);
+    border-radius: 50%;
+    box-shadow: 0 7px rgb(146, 146, 146);
+}
+
+button:hover {
+    background-color: rgb(241, 18, 10);
+    color:rgb(160, 160, 160);
+    cursor: pointer;
+    box-shadow: 0 6px rgb(146, 146, 146);
+}
+
+button:active {
+    background-color: rgb(11, 138, 7);
+    color:rgb(255, 255, 255);
+    box-shadow: 0 2px rgb(156, 155, 155);
+    transform: translateY(4px);
+}
