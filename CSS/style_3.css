@@ -1,6 +1,6 @@
 body {
     background-color: rgb(88, 97, 105);
-    background-image: url("");
+    background-image: url("https://i.pinimg.com/originals/a9/e7/e4/a9e7e4ed16e15e7e490caa69c146b790.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -64,6 +64,11 @@ input[type=submit]:hover {
     content:"";
     display: table;
     clear: both;
+}
+
+li:hover {
+    cursor: pointer;
+    color:rgb(241, 18, 10);
 }
 
 button {
