@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">         
+        <link rel="stylesheet" type="text/css" href="">
+    <title>JavaScript_1</title>
+    </head>
+    <body> 
+        <button onclick="exercise()">click</button> 
+        <p id="exercise"></p>
+        <br>
+        <h2>some() method</h2>
+        <p id="demo"></p>
+        
+        <script>
+            function exercise() {
+                document.getElementById("exercise").innerHTML = "&#128041";
+            }
+
+            const numbers  = [45,4,9,16,25];
+            let someOver18 = numbers.some(myFunction);
+
+            document.getElementById('demo').innerHTML = "Some over 18 is " + someOver18;
+
+            function myFunction(value, index, array) {
+                return value > 18;
+            }
+        </script>
+    </body>
+</html>
