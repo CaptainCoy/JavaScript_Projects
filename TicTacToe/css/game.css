@@ -9,8 +9,7 @@ h1 {
 
 /* this container includes table and canvas */
 .center-container {
-    width: 608px;
-    height: 608px;
+    width: 608px;    
     margin: 0 auto;
     margin-top: 50px;
 }
