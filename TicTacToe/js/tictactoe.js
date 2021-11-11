@@ -28,7 +28,7 @@ function placeXOrO (squareNumber) {
         }
         //sound
         Audio ('./media/place.mp3');
-        if (activePlayer === '0') {
+        if (activePlayer === 'O') {
             disableClick();
             setTimeout (function() { computersTurn(); }, 1000)
         }
@@ -96,7 +96,7 @@ function audio(audioURL) {
 // win lines
 function drawWinLine(coordX1,coordY1,coordX2,coordY2) {
     const canvas = document.getElementById('win-lines')
-    const C = canvas.getContext('2d');
+    const c = canvas.getContext('2d');
     let x1 = coordX1,
         y1 = coordY1,
         x2 = coordX2,
@@ -107,13 +107,13 @@ function drawWinLine(coordX1,coordY1,coordX2,coordY2) {
     // this interacts with the canvas
     function animateLineDrawing() {
         const animationLoop = requestAnimationFrame(animateLineDrawing);
-        C.clearRect(0,0,608,608)
-        C.beginPath();
-        C.moveTo(x1,y1)
-        C.lineTo(x,y)
-        C.lineWidth=10;
-        C.strokeStyle='rgba(70,255,33,.8)';
-        C.stroke();
+        c.clearRect(0,0,608,608)
+        c.beginPath();
+        c.moveTo(x1,y1)
+        c.lineTo(x,y)
+        c.lineWidth=10;
+        c.strokeStyle='rgba(70,255,33,.8)';
+        c.stroke();
         if (x1 <= x2 && y1 <= y2) {
             if (x < x2) {x += 10;}
             if (y < y2) {y += 10;}
@@ -127,7 +127,7 @@ function drawWinLine(coordX1,coordY1,coordX2,coordY2) {
     }
     function clear() {
         const animationLoop = requestAnimationFrame(clear);
-        C.clearRect(0,0,608,608);
+        c.clearRect(0,0,608,608);
         cancelAnimationFrame(animationLoop);
     }
     disableClick();
