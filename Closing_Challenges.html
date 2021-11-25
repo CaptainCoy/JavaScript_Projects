@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
         
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                
         <style>
 
             html {
@@ -10,6 +12,8 @@
                 color:darkslategrey;
                 scroll-behavior: smooth;
             }
+
+            /* fade in while loading */
             body {
                 opacity: 1;
                 transition: 1s opacity;
@@ -28,6 +32,7 @@
                 box-sizing: border-box;
             }
 
+            /* navbar */
             ul {
                 list-style-type: none;
                 margin: 0;
@@ -37,6 +42,7 @@
                 position: sticky;
                 position: -webkit-sticky; /* for people using safari usually apple folks */
                 top: 0;
+                z-index: 1;
             }
 
             li {
@@ -145,6 +151,7 @@
                 opacity: 1;
             }
             
+            /* weird animation */
             .blob {
                 width: 100px;
                 height: 100px;
@@ -159,6 +166,7 @@
                 100% {top:0px; background: green; width: 100px;}
             } 
 
+            /* pic of my Olive that zooms in/ out */
             @keyframes imgZoom {
                 0% {
                     transform: scale(1,1);
@@ -174,11 +182,38 @@
             .featured-image img {
                 animation: imgZoom 15s forwards;
             }
+
+            /* slideshow (obviously) */
+            #slideshow {
+                background-color: rgba(52, 126, 187, 0.76);
+                border-radius: 20px;                                           
+                margin: 50px auto;
+                position: relative;
+                width: 190px;
+                height: 190px;
+                padding: 10px;
+                box-shadow: 0 0 20px rgba(52, 65, 78, 0.699)
+            }
+
+            #slideshow > div {
+                position: absolute;
+                padding-left: 10px;
+                padding-top: 10px;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+            }
+
         </style>
+
     <title>JavaScript_1</title>
+
     </head>
     <body> 
+
         <script>
+
             document.body.classList.add('fade-out');           
            
         </script>
@@ -187,23 +222,24 @@
             <li><a class="active" href="#home">Home</a></li>
             <li><a href="#overhere">Over Here</a></li>
             <li><a href="#differentspot">Different Spot</a></li>
-            <li><a href="bottom">End of the Road</a></li>
+            <li><a href="#bottom">End of the Road</a></li>
         </ul>
         
         <h1 id="home" style="font-size:12vw; text-align: center;">This is neat.</h1> 
+        <hr>
         <h3 style="font-size:5vw;">Wow!</h3>    
         <p>This next series of paragrphs is jus to fill up some<br>
         space to make the <br>
         bookmarks look cooler<br>
         especially when I add in the<br>
-        slow scrolling effect</p>  
+        smooth scrolling effect</p>  
         <h3>More Space</h3>
         <p>Blah blah blah<br>
         blah blah blah blah blah blah<br>
         blah blah blah blah blah blah<br>
         blah blah blah</p>
 
-        <h2 style="text-align: center; color:rgb(109, 148, 3);">Good Girl</h2>
+        <h2 style="text-align: center; color:rgb(204, 236, 114);">Good Girl</h2>
 
         <div class="container">
             <div class="featured-image">
@@ -211,7 +247,35 @@
             </div>
         </div>
 
-        <div id="differentspot" class="blob"></div>
+        <div class="blob"></div>
+
+        <div id="slideshow">
+            <div>
+                <img src="images/jibyardnp.jpg" alt="Jibyard rip">
+            </div>        
+            <div>
+                <img src="images/dubmeth.jpg" alt="Me & JP">
+            </div>
+            <div>
+                <img src="images/stalegap.jpg" alt="stale">
+            </div>
+            <div>
+                <img src="images/back3.jpg" atl="spin to win">
+            </div>
+            <div>
+                <img src="images/jibyardmeth.jpg" alt="rollerboarding">
+            </div>
+            <div>
+                <img src="images/lofarrblunt.jpg" alt="Sk8r boi">
+            </div>
+        </div>
+        <div id="differentspot">
+            <p style="text-align: center; font-weight: bolder; font-size: 33px;">Shreddin' Bro &#129305;</p>
+        </div>
+
+        <hr>
+
+        <p id="bottom" style="text-align: center;">End of the Road</p>
 
         <button class="open-button" onclick="openForm()">What's this?</button>
 
@@ -244,7 +308,19 @@
         window.addEventListener('DOMContentLoaded', () => {
             document.body.classList.remove('fade-out');
         });
+        
+        $("#slideshow > div:gt(0)").hide();
+
+        setInterval(function() {
+            $('#slideshow > div:first')
+            .fadeOut(2000)
+            .next()
+            .fadeIn(2000)
+            .end()
+            .appendTo('#slideshow');
+        }, 3000);
 
         </script>
+                  
     </body>
 </html>
