@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        
+        <style>
+
+            html {
+                background-color: darkorange;
+                color:darkslategrey;
+                scroll-behavior: smooth;
+            }
+            body {
+                opacity: 1;
+                transition: 1s opacity;
+            }
+
+            body.fade-out {
+                opacity: 0;
+                transition: none;
+            }
+
+            p {
+                font-size: 12;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color:rgba(3, 126, 145, 0.767);
+                position: sticky;
+                position: -webkit-sticky; /* for people using safari usually apple folks */
+                top: 0;
+            }
+
+            li {
+                float:left;
+            }
+
+            li a {
+                display: block;
+                color:rgba(170, 241, 38, 0.568);
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            li a:hover {
+                background-color: rgb(4, 115, 133);
+                color:rgba(183, 243, 73, 0.993);
+            }
+
+            .active {
+                background-color: rgba(14, 213, 243, 0.767);
+            }
+
+            .container {
+                max-width: 200px;
+                max-height: 400px;                
+                margin: auto;
+                border-radius: 10px;
+                padding: 5px;                
+            } 
+
+            img {
+                height:fit-content;
+                width: fit-content;
+                max-height: 350px;
+                max-width: 150px;
+                border-radius: 15px;
+            }
+
+            /* Button used to open the contact form - fixed at the bottom of the page */
+            .open-button {
+                background-color: rgb(7, 7, 7);
+                color: rgb(168, 8, 8);
+                padding: 16px 20px;
+                border: none;
+                cursor: pointer;
+                opacity: 0.8;
+                position: fixed;
+                bottom: 23px;
+                right: 28px;
+                width: 280px;
+            }
+
+            /* The popup form - hidden by default */
+            .form-popup {
+                display: none;
+                position: fixed;
+                bottom: 0;
+                right: 15px;
+                border: 3px solid #311515;
+                z-index: 9;
+            }
+
+            /* Add styles to the form container */
+            .form-container {
+                max-width: 300px;
+                padding: 10px;
+                background-color: rgb(78, 36, 36);
+            }
+
+            /* Full-width input fields */
+            .form-container input[type=text] {
+                width: 100%;
+                padding: 15px;
+                margin: 5px 0 22px 0;
+                border: none;
+                background: #000000;
+            }
+
+            /* When the inputs get focus, do something */
+            .form-container input[type=text]:focus {
+                background-color: rgb(156, 19, 19);
+                outline: none;
+            }
+
+            /* Set a style for the submit/login button */
+            .form-container .btn {
+                background-color: #aa0404;
+                color: rgb(5, 0, 0);
+                padding: 16px 20px;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+                margin-bottom:10px;
+                opacity: 0.8;
+            }
+
+            /* Add a background color to the cancel button */
+            .form-container .cancel {
+                background-color: rgb(122, 227, 243);
+                color:floralwhite;
+            }
+
+            /* Add some hover effects to buttons */
+            .form-container .btn:hover, .open-button:hover {
+                opacity: 1;
+            }
+            
+            .blob {
+                width: 100px;
+                height: 100px;
+                background: green;
+                position: relative;
+                animation: bloop 7s infinite;
+            }
+
+            @keyframes bloop {
+                0% {top:0px; background: green; width: 100px;}
+                50% {top: 175px; background: greenyellow; width:500px;}
+                100% {top:0px; background: green; width: 100px;}
+            } 
+
+            @keyframes imgZoom {
+                0% {
+                    transform: scale(1,1);
+                }
+                50% {
+                    transform: scale(1.2,1.2);
+                }
+                100% {
+                    transform: scale(1,1);
+                }
+            }
+
+            .featured-image img {
+                animation: imgZoom 15s forwards;
+            }
+        </style>
+    <title>JavaScript_1</title>
+    </head>
+    <body> 
+        <script>
+            document.body.classList.add('fade-out');           
+           
+        </script>
+
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#overhere">Over Here</a></li>
+            <li><a href="#differentspot">Different Spot</a></li>
+            <li><a href="bottom">End of the Road</a></li>
+        </ul>
+        
+        <h1 id="home" style="font-size:12vw; text-align: center;">This is neat.</h1> 
+        <h3 style="font-size:5vw;">Wow!</h3>    
+        <p>This next series of paragrphs is jus to fill up some<br>
+        space to make the <br>
+        bookmarks look cooler<br>
+        especially when I add in the<br>
+        slow scrolling effect</p>  
+        <h3>More Space</h3>
+        <p>Blah blah blah<br>
+        blah blah blah blah blah blah<br>
+        blah blah blah blah blah blah<br>
+        blah blah blah</p>
+
+        <h2 style="text-align: center; color:rgb(109, 148, 3);">Good Girl</h2>
+
+        <div class="container">
+            <div class="featured-image">
+                <img id="overhere" src="images/DoggyDarlins_15.jpg" alt="Olivesnuggs">
+            </div>
+        </div>
+
+        <div id="differentspot" class="blob"></div>
+
+        <button class="open-button" onclick="openForm()">What's this?</button>
+
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+                <h1>Sell Your Soul</h1>
+                <h3><u>666</u></h3>
+
+                <label for="name"><b>Name</b></label>
+                <input type="text" name="uname" required>
+
+                <label for="bday"><b>Birthdate</b></label>
+                <input type="text" name="bday" required>
+
+                <button type="submit" class="btn">Soul</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Guardian Angel</button>
+            </form>
+        </div>
+       
+        <script>       
+
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.remove('fade-out');
+        });
+
+        </script>
+    </body>
+</html>
