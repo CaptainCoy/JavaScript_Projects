@@ -4,12 +4,16 @@ html {
 }
 
 body {
+    background-color: rgb(130, 143, 99);
+    color: rgb(243, 196, 42);
     max-width: 500px;
     margin: 0 auto;
 }
 
 input {
-    padding-top: 30px;
+    background-color: rgba(22, 39, 12, 0.609);
+    color: rgb(66, 250, 10);
+    padding-top: 10px;
     width: 500px;
     height: 60px;
     font-size: 40px;
@@ -20,11 +24,28 @@ input:focus {
     outline: none;
 }
 
+.addItem {
+    background-color: rgba(164, 222, 226, 0.938);
+    color: rgb(7, 36, 49);
+    box-shadow: 3px  6px rgba(4, 48, 4, 0.74);
+    border-radius: 15px;
+}
+
+.addItem:hover {
+    background-color: rgba(130, 199, 204, 0.938);
+    color: rgb(255, 187, 0);
+    box-shadow: 1px 3px rgba(4, 48, 4, 0.74);    
+}
+
 li {
     text-align: left;
     font-size: 40px;
     list-style: none;
     margin: 0;
+}
+
+.remove {
+    padding-bottom: 5px;
 }
 
 /* Footer */
