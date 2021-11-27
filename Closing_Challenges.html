@@ -239,7 +239,7 @@
         blah blah blah blah blah blah<br>
         blah blah blah</p>
 
-        <h2 style="text-align: center; color:rgb(204, 236, 114);">Good Girl</h2>
+        <h2 id="lady" ondblclick="changeH2()" style="text-align: center; color:rgb(204, 236, 114);">Good Girl</h2>
 
         <div class="container">
             <div class="featured-image">
@@ -295,7 +295,11 @@
             </form>
         </div>
        
-        <script>       
+        <script>  
+        
+        function changeH2() {
+            document.getElementById("lady").innerHTML = "&#128525;";
+        }
 
         function openForm() {
             document.getElementById("myForm").style.display = "block";
